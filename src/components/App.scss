@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hellow {
+    color: red;
+}
+
+$body-color: green;
+
+body {
+  color: $body-color;
+}
