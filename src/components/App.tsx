@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import './App.scss'
+import React, {useState} from 'react';
+import * as styles from './App.module.scss';
 
 export const App:React.FunctionComponent = () => {
     const [coutn, setCount] = useState(0);
@@ -8,7 +8,7 @@ export const App:React.FunctionComponent = () => {
         setCount(val => val + 1)
     }
 
-  return (<div className='hellow'>
+  return (<div className={styles.hellow}>
     App teest number {coutn}
     <div>
         <button onClick={handleClick}>Click</button>
