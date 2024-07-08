@@ -1,11 +1,8 @@
 import { ModuleOptions } from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import {OptionsI} from "../build/types/types";
 
-interface LoadersI {
-    isDev?: boolean,
-}
-
-export const buildLoaders = ({ isDev }: LoadersI): ModuleOptions => {
+export const buildLoaders = ({ isDev }: OptionsI): ModuleOptions => {
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',

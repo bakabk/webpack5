@@ -5,8 +5,8 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import {LazyAbout, LazyDashboard} from './pages'
-import {App} from './components/App/App';
+import {LazyAbout, LazyDashboard} from '@/pages'
+import {App} from '@/components/App/App';
 import { Suspense } from 'react';
 
 const root = document.getElementById('root');

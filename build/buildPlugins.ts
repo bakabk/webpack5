@@ -1,20 +1,15 @@
 import webpack, { Configuration } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import BundleAnalyzerPlugin from "webpack-bundle-analyzer";
+// import BundleAnalyzerPlugin from "webpack-bundle-analyzer";
+import {OptionsI} from "../build/types/types";
 
 
-interface BuildPluginsI {
-    template: string,
-    isDev?: boolean,
-    isProd?: boolean
-}
-
-export const buildPlugins = ({template, isDev, isProd}: BuildPluginsI):Configuration['plugins'] => {
+export const buildPlugins = ({paths, isDev, isProd}: OptionsI):Configuration['plugins'] => {
     const plugins: Configuration['plugins'] = [
         new HtmlWebpackPlugin({
             title: 'Development',
-            template: template,
+            template: paths.html,
         })
     ];
 

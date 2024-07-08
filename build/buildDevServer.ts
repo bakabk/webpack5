@@ -1,14 +1,10 @@
 import { Configuration } from "webpack";
+import {OptionsI} from "../build/types/types";
 
-interface DevServerI {
-    directory?: string,
-    port: number
-}
-
-export const buildDevServer = ({directory, port}: DevServerI):Configuration['devServer'] => {
+export const buildDevServer = ({paths, port}: OptionsI):Configuration['devServer'] => {
     return {
         static: {
-            directory,
+            directory: paths.output,
         },
         port: port ?? 3000,
         open: false,
