@@ -10,7 +10,6 @@ interface EnvI {
 
 export default (env: EnvI) => {
     const isDev = env.mode === 'development';
-    console.log(">>>🚀 - file: webpack.config.ts:13 - isDev:", isDev, env);
     const isProd = env.mode === 'production';
     const port = 3000;
 

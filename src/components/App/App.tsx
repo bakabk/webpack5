@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { Outlet } from "react-router-dom";
+
 import * as styles from './App.module.scss';
 
 export const App:React.FunctionComponent = () => {
@@ -13,5 +15,6 @@ export const App:React.FunctionComponent = () => {
     <div>
         <button onClick={handleClick}>Click</button>
     </div>
+    <Outlet />
   </div>)
 }
