@@ -1,6 +1,6 @@
 import { ModuleOptions } from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {OptionsI} from "../build/types/types";
+import { OptionsI } from "../build/types/types";
 
 export const buildLoaders = ({ isDev }: OptionsI): ModuleOptions => {
     const tsLoader = {
@@ -13,12 +13,12 @@ export const buildLoaders = ({ isDev }: OptionsI): ModuleOptions => {
         loader: "css-loader",
         options: {
             modules: {
-              localIdentName: isDev ? "[path][name]_[local]" : "[hash:base64:5]"
+                localIdentName: isDev ? "[path][name]_[local]" : "[hash:base64:5]"
             },
-          },
-      };
+        },
+    };
 
-      const cssLoaders = {
+    const cssLoaders = {
         test: /\.s[ac]ss$/i,
         use: [
             // Creates `style` nodes from JS strings
@@ -31,14 +31,18 @@ export const buildLoaders = ({ isDev }: OptionsI): ModuleOptions => {
     };
 
     const imageLoader = [{
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-    }, 
+    },
     {
         test: /\.(csv|tsv)$/i,
         use: ['csv-loader'],
+    },
+    {
+        test: /\.svg$/,
+        use: [{ loader: '@svgr/webpack', options: { icon: true } }],
     }
-];
+    ];
 
     const fontsLoader = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
