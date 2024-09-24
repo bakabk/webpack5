@@ -10,3 +10,6 @@ declare module '*.png'
 declare module '*.jpg'
 declare module '*.jpeg'
 declare module '*.svg'
+
+declare const __PLATFORM__: 'desktop' | 'mobile';
+declare const __ENV__: 'production' | 'development';

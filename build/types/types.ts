@@ -4,18 +4,23 @@ export interface BuildPaths {
     html: string,
     src: string,
     devServer: string,
+
 }
+
+export type Mode = 'production' | 'development';
+export type Platform = 'mobile' | 'desktop'
 
 export interface OptionsI {
     isProd?: boolean,
     isDev?: boolean,
     port?: number,
     paths?: BuildPaths,
+    platform: Platform,
+    mode?: Mode
 }
 
-export type Mode = 'production' | 'development';
-
 export interface EnvI {
-    mode: Mode;
-    port: number;
+    mode?: Mode;
+    port?: number;
+    platform?: Platform
 }

@@ -15,8 +15,10 @@ export default (env: EnvI) => {
     const isDev = env.mode === 'development';
     const isProd = env.mode === 'production';
     const port = 3000;
+    const platform = env.platform ?? 'desktop'
+    const mode = env.mode ?? 'production'
 
-    const config:webpack.Configuration = buildWebpack({isDev, isProd, port, paths});
+    const config:webpack.Configuration = buildWebpack({isDev, isProd, port, paths, platform, mode});
 
     return config;
 }
