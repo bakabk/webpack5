@@ -4,10 +4,19 @@ import { OptionsI } from "../build/types/types";
 
 export const buildLoaders = ({ isDev }: OptionsI): ModuleOptions => {
     const tsLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
+        //ts loader умеет работать с JSX
+        //если бы не успользовали ts то нужен был бы babel loader
         exclude: /node_modules/,
-    };
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: isDev
+            }
+          }
+        ]
+      };
 
     const cssLoaderWithModule = {
         loader: "css-loader",

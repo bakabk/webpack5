@@ -2,6 +2,7 @@ import webpack, { Configuration, DefinePlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 // import BundleAnalyzerPlugin from "webpack-bundle-analyzer";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import {OptionsI} from "../build/types/types";
 
 
@@ -19,6 +20,7 @@ export const buildPlugins = ({paths, isDev, isProd, platform, mode}: OptionsI):C
 
     if (isDev) {
         plugins.push(new webpack.ProgressPlugin());
+        plugins.push(new ForkTsCheckerWebpackPlugin());
     }
 
     if (isProd) {

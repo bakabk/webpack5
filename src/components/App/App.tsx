@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Outlet } from "react-router-dom";
 import Png from '@/assets/png.png';
 import Jpg from '@/assets/icon.jpg';
@@ -12,6 +12,12 @@ export const App:React.FunctionComponent = () => {
     const handleClick = () => {
         setCount(val => val + 1)
     }
+
+    const TODO = (n: number) => n;
+
+    useEffect(() => {
+      TODO(1223) // проверка работы этого плагина ForkTsCheckerWebpackPlugin - просто передать строку
+    }, [])
 
     // if (__PLATFORM__ === 'desktop') return <div>desktop</div>
     // if (__PLATFORM__ === 'mobile') return <div>mobile</div>
