@@ -25,8 +25,8 @@ export const buildPlugins = ({paths, isDev, isProd, platform, mode}: OptionsI):C
 
     if (isProd) {
         plugins.push(new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css",
+            filename: "[name].[contenthash].css",
+            chunkFilename: "[id].[contenthash].css",
         }));
 
         // plugins.push(new BundleAnalyzerPlugin());

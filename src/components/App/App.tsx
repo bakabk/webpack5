@@ -19,14 +19,10 @@ export const App:React.FunctionComponent = () => {
       TODO(1223) // проверка работы этого плагина ForkTsCheckerWebpackPlugin - просто передать строку
     }, [])
 
-    // if (__PLATFORM__ === 'desktop') return <div>desktop</div>
-    // if (__PLATFORM__ === 'mobile') return <div>mobile</div>
-
-    console.log('>>>ENV', __ENV__);
-
-  return (<div className={styles.hellow}>
-    PLATFORM={__PLATFORM__}
-    App teest number {coutn}
+  return (<div className={styles.text}>
+    <p className={styles.info}>ENV={__ENV__}</p>
+    <p className={styles.info}>PLATFORM={__PLATFORM__}</p>
+    <p>App teest number {coutn}</p>
     <div>
         <button onClick={handleClick}>Click</button>
     </div>
